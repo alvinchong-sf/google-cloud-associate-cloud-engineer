@@ -1,10 +1,10 @@
 # Georgraphy and Regions
 
 ## Zone
-A zone is a _*deployment area*_ for Google Cloud resources _*within a region*_. The smallest entity of Google's global infrastructure.
+A zone is a __*deployment area*__ for Google Cloud resources __*within a region*__. The smallest entity of Google's global infrastructure.
 
 ## Region
-Regions are independent geographic areas that are _*sub-divided into zones.*_
+Regions are independent geographic areas that are __*sub-divided into zones.*__
 
 ## Multi-Region
-Multi-Regions are large geographic areas, that contains _*two-or more regions.*_
+Multi-Regions are large geographic areas, that contains __*two-or more regions.*__
