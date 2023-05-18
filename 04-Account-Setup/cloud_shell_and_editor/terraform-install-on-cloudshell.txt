@@ -8,7 +8,7 @@ Name this file .customize_environment
 Copy the script below and paste into the editor window
 
 #!/bin/sh
-TERRAFORM_VERSION="0.13.0"
+TERRAFORM_VERSION="1.4.6"
 curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 unzip -o terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/local/bin
 
