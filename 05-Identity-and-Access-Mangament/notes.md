@@ -50,3 +50,40 @@ Conditions allow you to choose granting resouref access to identities only if co
 
 ### Audit Config
 Used to configure audit logging.
+
+
+## Service Accounts
+1.  User-managed (User created)
+2.  Default (Using some GCP services)
+3.  Google-Managed
+
+### Service Account Permissions
+### Access Scopes
+Legacy Method
+
+### Best Practices
+-  Audit service accounts and keys using either serviceAccount.keys.list() method or the Logs Viewer page in the console.
+
+-  Delete service account external keys if you don't need them
+
+-  Grant the service account only the minimum set of permissions required to achieve their goal
+
+-  Create service accoutns for each service with only the permissions required for that service
+
+
+## Cloud Identity
+
+### Device Management
+Whitelist of approve applications, enfore work profiles
+
+### Security
+2 Step Verification
+
+### Single Sign-on (SSO)
+IDP (Identity Provider)
+
+### Reporting
+Audit logs, export logs to Big Query
+
+### Directory Management
+
