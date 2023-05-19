@@ -86,4 +86,42 @@ IDP (Identity Provider)
 Audit logs, export logs to Big Query
 
 ### Directory Management
+google Cloud Directory Sync
+
+## IAM Best Practices
+
+### Least Privilege
+-  Apply only the minimal access level required for what's needed.
+-  Predefined roles over primitive roles
+-  Grant roles at the smallest scope
+-  Child resources cannot restrict access granted on it's parent
+-  Restrict who can create and manage service accounts
+-  Be cautious owner roles
+
+### Resource Hierarchy
+-  Mirror your Google Cloud resource hirearchy structure to your orginization structure
+-  Use projects to group resources that share the same trust boundary
+-  Set policies at the organization level and at the project level rather than at the resource level
+-  Use the security principle of least priviledge to grant IAM roles
+-  Grant roles for users or groups at the folder level instead of setting it at the project level, if spanning across multiple projects
+
+### Service Accounts
+-  When using service accounts, treat each app as a seperate trust boundary
+-  Do not delete service accounts that are in use by running services
+-  Rotate user managed service account keys
+-  Name service account keys to reflect use and permissions
+-  Restrict service account access
+-  Don't check in service account keys into source code
+
+### Auduting
+-  Use Cloud Audit Logs to regularly audit IAM policy changes
+-  Audit who can edit IAM policies on projects
+-  Export audit logs to Cloud Storage for long-term retention
+-  Regularly audit service account key access
+-  Restrict log access with logging roles
+
+### Policy Management
+-  To grant access to all projects in your Organization, use an orginization-level policy
+-  Grant roles to a Google group instead of individual users where possible.
+-  When granting multiple roles to a particular task, create a Google group instead.
 
