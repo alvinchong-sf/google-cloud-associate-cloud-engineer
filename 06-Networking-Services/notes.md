@@ -173,3 +173,32 @@ Ephemeral Static  Ephemeral Static
 
 Regional IP address
 Global IP address
+
+
+## VPC Firewall rules
+-  protocol
+-  ports
+-  sources
+-  destinations
+-  target
+
+## Implied and pre-populated rules
+-  TCP: PORT 25 (not allowed)
+-  TCP, UDP, ICMP, GRE (block)
+-  Metadata Server: 169.254.169.254
+    -  DHCP
+    -  DNS
+    -  Instance Metadata
+    -  NTP
+
+### Implied Rules
+-  allow egress
+-  deny ingress
+
+### Firewall rule characteristics
+-  incoming or outgoing but not both
+-  IPv4
+-  Allow or Deny but not both
+-  Must select VPC network
+-  Stateful (Return traffic matching this connection is allowed)
+-  Connection tracking table
