@@ -202,3 +202,99 @@ Global IP address
 -  Must select VPC network
 -  Stateful (Return traffic matching this connection is allowed)
 -  Connection tracking table
+
+## VPC Peering
+-  Private connectivity across two VPC networks (FFC 1918) (Does not traverse public internet)
+-  Peer across the same or different projects and organizations
+-  Reduces network latency
+-  Increases network security
+-  Reduces network costs (Reduce costs from egress, keeping traffic within GCP network)
+
+
+## Shared VPC
+
+## CPV Flow Logs
+-  1 every 10 packets are captured
+-  Cloud logging activates logs, can possibily push logs to Cloud Storage
+
+### Network Monitoring
+-  Real-time visibility into network throughput and performance
+-  Analyze network usage and optimize network traffic expenses
+-  Network forensics when incidents occur
+-  Real time security analysis
+    - Stream to Pub/Sub and integrate with SIEM(Splunk, DataDog, etc..)
+-  Pulling any logs must be done in the GCP console.
+
+## DNS Fundamentals
+
+### What is DNS
+-  Domain Name System is a global decentralize database that lets you store ip addresses and other data and look them up by name
+
+-  User <--> www.google.com <--> Zone File <--> 172.217.164.196 <--> Google Server
+
+### Why DNS
+#### Previously
+-  Host file store in each computer that maps DNS to ip address
+-  Stored on each computer
+-  Updates were difficult to manage
+-  Not scalable
+
+#### DNS
+-  Organization
+-  Domain Name Structure
+-  A dynamic system
+
+### DNS Structure
+alvin.com. <-- ROOT is the dot
+
+```bash
+-  Root domain (13 root servers) Root zone IANA
+-  Top-level domains | TLD name servers .com, .org, .net, .io, .ca, .uk, .it
+-  Second-level domains | Authoritative name servers google, alvin, wikipedia, speedtest, cantrill
+-  sub-domain of parent | 
+```
+
+### How DNS works
+ 8 step process
+
+ 1.  DNS client
+ 2.  DNS recrusive resolver ISP (cache)
+ 3.  DNS root name servers
+
+
+## DNS Record Types
+-  Name Server (NS)
+-  A and AAAA records (points to an IP address)
+   -  A -> ipv4 records
+   -  AAAA -> ipv6 records
+-  CNAME records
+   -  multiple domain name to a single ip address
+-  TXT records
+   -  Human or machine readable texts
+-  MX records
+   -  For emails, looks at the domain.
+-  PTR records
+   -  Opposite of the A recrods, looks at ip addresses first than looks up domain name
+-  SOA records (start of authority record)
+
+## Network Address Translation (NAT)
+-  Translates local private IP(s) to public IP(s) before transferring packets
+-  Originally designed to deal with the scarcity of free IPv4 addresses
+-  IPv6 networks do not require NAT as their are no shortage of addresses
+-  Provides security and privacy
+
+### Types of NAT
+1.  Static NAT - 1 private IP to 1 public IP
+2.  Dynamic NAT - 1 private Ip to 1 public IP in pool of public addresses
+3.  Port Address Translation (PAT) - Multiple private Ips to 1 public IP
+
+## Cloud DNS
+-  Host authoritative name servers and allow authoritative DNS lookups (DNS as a Service)
+-  100% SLA - Globally Resilient
+-  Host zones through managed name servers
+   -  Public Zone - visible to the internet
+   -  Private Zone - visible only within your network
+   -  VPC network peering is not required for Cloud DNS to operate
+
+
+Note for exam: When creating DNS, SOA and NS record will be automatically created
