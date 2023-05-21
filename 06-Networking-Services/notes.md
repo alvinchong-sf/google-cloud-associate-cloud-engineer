@@ -297,4 +297,5 @@ alvin.com. <-- ROOT is the dot
    -  VPC network peering is not required for Cloud DNS to operate
 
 
-Note for exam: When creating DNS, SOA and NS record will be automatically created
+> **Note for exam**
+> When creating DNS, SOA and NS record will be automatically created
