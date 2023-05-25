@@ -96,3 +96,28 @@
 -  Stopping / Suspending
    -  Shutdown script
    -  cost to static IPs, disk
+
+
+## SSH into linux instance using OS login
+
+```bash
+# run in your terminal
+gcloud init
+
+# follow the prompt
+
+# run in your terminal, to generate a public and private key pair
+ssh-keygen
+
+# enter directory and passphrase
+
+# Go to your instance vm and add custom metadata
+key: enable-oslogin
+val: TRUE
+
+# in your terminal, login to your instance by running
+gcloud compute os-login ssh-keys add --key-file .ssh/id_rsa.pub
+
+# grab your username from the result above, and run
+ssh -i .ssh/id_rsa <USERNAME>@<EXTERNAL_IP_ADDRESS>
+```
