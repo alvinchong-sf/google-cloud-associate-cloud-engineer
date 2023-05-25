@@ -121,3 +121,54 @@ gcloud compute os-login ssh-keys add --key-file .ssh/id_rsa.pub
 # grab your username from the result above, and run
 ssh -i .ssh/id_rsa <USERNAME>@<EXTERNAL_IP_ADDRESS>
 ```
+
+
+## Query Metadata
+
+```bash
+# Query
+curl -H "Metadata-Flavor: Google" http://metadata.google.internal/computeMetadata/v1/instance/
+
+curl -H "Metadata-Flavor: Google" http://metadata.google.internal/computeMetadata/v1/project/
+
+# Add custom meta data
+gcloud compute instances add-metadata alvin-webserver --metadata env=dev --zone us-east1-b
+```
+
+## Compute Engine Billing
+-  Each individial vCPU and each GB of memory is billed seperately
+-  All VCPUs, GPUs, and each GB of memory are charged by the second with a minimum of 1 minute.
+-  Instance uptime - number of seconds between when you start an instanfce and when you stop an instance (terminated)
+
+### Reservations
+-  Ensuring resources are available for when you need it
+   -  Future increases in demand
+   -  Planned or unplanned spikes
+   -  Backup and disaster recovery
+   -  Buffer
+
+> Include sustanined use and committed use discounts
+> Apply only to COmpute Engine, Dataproc and GKE VMs
+
+### Discount types
+-  Sustained use discounts
+-  Committed use discounts
+-  Preemptible VM's
+
+### Sustained use discounts
+-  Automatic discounts applied to vCPU, GPU and memory
+
+### Committed use discounts
+-  Purchased 1 year or 3 year contracts in return for deeply discounted prices
+-  Predictable/steady-state resources
+-  57% discount for most resources
+-  70% for memory-optimized machine types
+-  Apply at the project level, as well as share discounts across multiple projects
+
+### Preemptible VMs
+-  80% cheaper, fixed pricing
+-  Compute engine stops them within 24 hours.
+-  no charge if < 10min
+
+> Cannot live migrate / Auto restart
+> Fault-tolerant applications
