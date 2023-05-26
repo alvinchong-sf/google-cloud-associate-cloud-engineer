@@ -214,6 +214,6 @@ gcloud compute instances add-metadata alvin-webserver --metadata env=dev --zone 
 -  Encrypted by default (option to use your own custom keys)
 -  Up to 64TB in size
 
-> Zonal
-> Regional 
+
 > Standard < Balanced < SSD < Local SSD
+__*Zonal*__ is Faster but __*Regional*__ is use for more durability eg. backup data
