@@ -317,3 +317,30 @@ If snapshot2 gets deleted, the difference between 1 and 2 will be transfered to 
 -  Set schedule to off peak hours
 -  Windows - create VSS snapshots
 
+
+## Deployment Manager
+1.  Name
+2.  Type
+3.  Properties
+
+```bash
+# Deployments can only be done through the command line
+
+# Mock deploy
+gcloud deployment-manager deployments create <DEPLOY_NAME> --config <FILE_NAME.yaml>
+
+# Actual deploy
+gcloud deployment-manager deployments update <DEPLOY_NAME>
+```
+
+### Best Practices
+-  Break up your configurations
+-  Use references - enforces order resources are created
+-  Preview your deployments using --preview flag
+-  Automate the creation of resources
+-  Use version control
+   -  Previous known good config
+   -  Audit trail
+   -  Use config for CI/CD
+
+
