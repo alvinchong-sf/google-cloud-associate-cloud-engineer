@@ -214,6 +214,28 @@ gcloud compute instances add-metadata alvin-webserver --metadata env=dev --zone 
 -  Encrypted by default (option to use your own custom keys)
 -  Up to 64TB in size
 
-
 > Standard < Balanced < SSD < Local SSD
 __*Zonal*__ is Faster but __*Regional*__ is use for more durability eg. backup data
+
+### Standard
+-  Backed by standard hard disk drives (HDD)
+-  Large data processing workloads that primarily use sequential I/Os
+-  Lowest priced persistent disk
+
+### Balanced
+-  Alternative to SSD persistent disks balanced performance and cost
+-  Same maximum IOPS as ssd-pd, lower IOPS per GB
+-  General purpose
+-  Price in between standard and SSD persistent disks
+
+### SSD
+-  Enterprise applications and high-performance databases that demand lower latency and more IOPS
+-  Single-digit millisecond latencies
+-  Highest priced persistent disk
+
+### Local SSD
+-  Physically attached to the server that host the VM instance
+-  Higher thoughtput/lower latency than PD
+-  Data persists until instance is stopped or deleted
+-  Fast scatch disk or cache
+-  SCISI and NVME
