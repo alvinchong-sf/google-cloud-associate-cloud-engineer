@@ -239,3 +239,81 @@ __*Zonal*__ is Faster but __*Regional*__ is use for more durability eg. backup d
 -  Data persists until instance is stopped or deleted
 -  Fast scatch disk or cache
 -  SCISI and NVME
+
+### Persistent Disk commands
+
+```bash
+# List persistent disk
+lsblk
+
+# Attach disk
+gcloud compute instances attach-disk alvin-instance --disk newpd --zone us-east1-b
+
+# state where the raw block devices is in
+sudo file -s /dev/sdb
+
+# Format drive
+sudo mkfs.ext4 -F /dev/sdb
+
+# mount point and disk
+sudo mkdir /newpd
+sudo mount /dev/sdb /newpd
+
+# create new file in disk
+sudo nano alvin.txt
+
+# reboot
+sudo reboot
+
+# get uuid of sdb block
+sudo blkid /dev/sdb
+
+# Add uuid and path
+sudo nano /etc/fstab
+
+# Mount
+sudo mount -a
+
+# Change disk size (note: you can only make it larger)
+gcloud compute disks resize newpd --size 150 --zone us-east1-b
+
+# extend file system in disk to allow system to see the extra spaces
+sudo resize2fs /dev/sdb
+
+# Detached disk from instance
+gcloud compute instances detach-disk alvin-instance --disk newpd --zone us-east1-b
+```
+
+
+## Persistent Disk Snapshots
+-  Backup and restore of persistent disks
+-  Global resources
+-  Support for zonal and regional PDs
+-  Incremental and automatically compressed
+-  Snapshots are stored in Cloud Storage
+-  Stored in regional or multi-regional location
+
+### Creating Snapshots
+-  Snapshot1 (full snapshot)
+-  Snapshot2 (incremental since snapshot1)
+-  Snapshot3 (new incremental since snapshot2)
+
+If snapshot2 gets deleted, the difference between 1 and 2 will be transfered to snapshot3(thus increasing snapshot 3).
+
+### Scheduled Snapshots
+-  Best practice for backup data
+-  Must be in the same region as pd
+-  Create a snapshot schedule and attached it to an existing persistent disk
+-  Create a new persistent disk with a snapshot schedule
+   -  Snapshot retention policy
+   -  Source disk deletion rule
+-  Not allow to edit snapshot. Must delete.
+-  Must dettached from instance first before deletion
+
+### Managing Snapshots
+-  1 snapshot = 10min
+-  Create regular schedules
+-  Eliminate excessive snapshots -----> images
+-  Set schedule to off peak hours
+-  Windows - create VSS snapshots
+
