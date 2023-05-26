@@ -172,3 +172,48 @@ gcloud compute instances add-metadata alvin-webserver --metadata env=dev --zone 
 
 > Cannot live migrate / Auto restart
 > Fault-tolerant applications
+
+## Storage Fundamentals
+### Block Storage
+-  High performance
+-  Evenly sized blocks
+-  Uniquely identifiable
+-  Mountable
+-  Bootable
+-  Spinning hard drives or Solid State drives
+
+### File Storage
+-  Network File System (NFS)
+-  Directory tree structure
+-  Mountable
+-  Not bootable
+
+### Object Storage
+-  Unstructured data
+-  Data (movies, song, image)
+-  Metadata
+-  Globally unique identifier
+-  Mounted in google cloud storage
+-  Not mountable
+-  Not bootable
+-  Infinitely scalable
+
+### Storage Performance Terms
+1.  I/O - measures in 4kb, 256kb, 4mb
+2.  I/O - queue depths
+3.  IOPS(Input Output operations per second) - I/O operations per second
+4.  Throughput - MB/s
+5.  Latency - Measurement of delay between the time data is requested when the data starts being returned, measure in milliseconds
+6.  Sequential Access - Large single file
+7.  Random Access - Loading an application or operating system
+
+## Persistent Disks and Local SSDs
+-  Persistent disk can persists after vm instance is terminated
+-  Detached and move to another instance.
+-  Disk resize feature
+-  Encrypted by default (option to use your own custom keys)
+-  Up to 64TB in size
+
+> Zonal
+> Regional 
+> Standard < Balanced < SSD < Local SSD
