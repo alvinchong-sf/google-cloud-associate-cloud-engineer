@@ -1,3 +1,5 @@
+# Severless Services
+
 ## App Engine Overview
 -  Fully managed, serverless platform to develop and host web apps
 -  PaaS service
@@ -31,4 +33,30 @@
    -  creates instances when your application receives requests
 -  Manual scaling
    -  Specifies the numebr of instances that continuously run
+
+
+
+## Cloud Function
+-  Serverless
+-  FaaS: Function as a Service
+-  Runtime: Python, Java, NodeJs, Go, .NET core
+-  Event-driven:
+   -  Triggers: HTTP, Pub/Sub, Cloud Storage (Firestore, Firebase)
+-  Billing: time + resources provisioned(memory)
+-  Free Tier
+
+### How Cloud Functions work
+-  Bind 1 trigger to 1 function at a time
+-  Source code is stored in Cloud storage as a zip file
+-  Pushes the code image to container registry
+```bash
+                                                               -----> Cloud
+        (event data)                                           |
+trigger ------------->  cloud function ------------> Server ---|
+                        ^  (stateless)                         -----> VPC
+                        |
+                        |
+                        v
+                        Container/Artifact Registry
+```   
 
