@@ -24,3 +24,37 @@
 -  Budget constraints
 -  High speeds/low latency not needed
 -  Outgoing traffic (egress) from GCP
+
+## Cloud Interconnect
+-  Low Latency, highly available connection between your on-premises and Google Cloud VPC networks
+-  Directly accessible internal IP addresses - Private Google Access
+-  __*Does not traverse*__ the public internet
+-  Dedicated connection
+-  __*Not encrypted*__
+-  Expensive
+
+### Dedicated Interconnect
+-  8 x 10 Gbps connections (80 Gbps total)
+-  2 x 100 Gbps connections (200 Gbps total)
+
+### Partner Interconnect
+-  50 Mbps to 50 Gbps VLAN attachments (50Gpbs total)
+
+### Direct Peering
+-  Direct peering connection between your on-premises network and Google's edge network
+-  100 locations in 33 countries
+-  Direct egress pricing available
+-  Direct Peering connection with Google is FREE
+
+### CDN Internconnect
+-  Enables select third-party CDN providers to establish direct peering links with Google's edge network
+-  Direct traffic from VPC network to the provider's network
+-  Reduced pricing on egress costs
+
+### When to use Cloud Interconnect
+-  Prevent traffic from traversing the public internet
+-  Dedicated physical conneciton
+-  Extension of your VPC network
+-  High speed/low latency is needed - 200Gbps
+-  Heavy outgoing traffic (egress) from GCP
+-  Private Google Access
