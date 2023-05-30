@@ -151,3 +151,149 @@
 
 ## Pods and Object Management
 
+### Kubernetes Objects
+-  Represents the state of the cluster
+-  Object Spec
+   -  Desired state described by you
+-  Object Status
+   -  Current state described by Kubernetes
+
+### Manifest File
+-  apiVersion: Version of the Kubernetes API
+-  kind: The kind of object you want to create
+-  metadata: Identifies the object(name, UID, namespace)
+-  spec: The desired state for this object
+
+### Pod concepts
+-  Smallest most basic, deployable object in Kubernetes.
+-  Represents single instance of a running process in your cluster
+-  Pod contains one or more containers
+-  Generally, 1 pod 1 container
+-  Remains on the node until:
+   -  The pod's process is complete
+   -  The pod is deleted
+   -  The pod is evicted from the node due to lack of resources
+   -  The node fails
+```bash
+ __________________________
+|                          |
+|           Node           |
+|   ____________________   |
+|  |        Pod         |  |
+|  |     _________      |  |
+|  |    |container|     |  |
+|  |     ---------      |  |
+|  |  shared storage    |  |
+|  |  shared networking |  |
+|  |____________________|  |
+|                          |
+|__________________________|
+
+```
+
+#### Namespaces
+-  When creating an object without a namespace, a default namespace is applied
+   -  Kube-system
+   -  Kube-public
+   -  kube-node-lease
+
+#### Pod lifecycle
+-  Pod lifecycle are ephemeral
+   1.  Pending: Initial pod phase for container(s) to start
+   2.  Running: At least one container in the pod is running
+   3.  Succeeded/failed: All containers in the pod have terminated successfully or unsuccessfully
+-  Unknown: state of the pod could not be obtained.
+
+#### Creating pods
+-  The kind of object you want to create
+-  Specifies how many instances of a pod will run
+-  Specification for a pod
+
+#### Workloads
+-  Deployments: runs multiple replicas of your app and automatically replaces any instances that fail or become unresponsive
+-  StatefulSets: used for apps that requires persistent storage
+-  DaemonSets: Ensures that every node in the cluster runs a copy of a pod
+-  Jobs: Used to run a finite task until completion
+-  CronJobs: Similar to jobs but runs until completion on a schedule
+-  ConfigMaps - Configuration info for any workload to reference
+
+
+## Kubernetes Services
+
+### Service
+-  Persistent single IP
+-  Internal and external
+-  Load Balancing
+-  Scaling
+
+### Service components
+-  services.yaml
+   -  kind: Service
+   -  metadata.name: DNS name of the service
+   -  spec.selector.mapp: Forward requests to pods with this label
+   -  spec.type: The type of service it is
+   -  spec.ports: internal and external ports
+-  deployment.yaml
+
+
+### Service Types
+1.  ClusterIP
+    1.  creates a stable ip address and port
+    2.  Pod must be listening to the same target port from the services
+2.  NodePort
+    1.  Static port pre-configured range: 30,000 - 32,767
+    2.  Node can be accessed by node ip and node port
+    3.  An extended version of cluster ip
+3.  LoadBalancer
+    1.  Exposed as a load balancer
+    2.  An extension of the NodePort service type. So it has a cluster ip
+4.  Multi-port Services
+    1.  Lets you expose more than one port.
+5.  ExternalName
+    1.  Mapping from an external DNS name to an internal DNS name
+6.  Headless
+    1.  No load balancing or cluster ip needed
+7.  Ingress
+
+#### Ingress for GKE
+-  Creates a HTTPS load balancer
+-  Creates a stable IP address that you can associate with the domain name
+-  Ingress controller, most useful and cost effective. Exposes multiple services under the same Ip address, you only pay 1 load balancer. Use native GCP integration
+-  ingress.yaml
+   -  backend.serviceName
+   -  paths.path
+   -  servicePort
+
+> Network Endpoint Group (NEG)
+
+#### Health Checks
+-  Default and inferred parameters are used if there are no specified health check parameters
+-  Should be explicitly defined by using a Backend Config custom resource definition (CRD)
+   -  Anthos Ingress controller
+   -  >1 Container
+   -  Specific port for LB health check
+   -  Backend service's health check
+   -  healthCheck parameter of a BackendConfig CRD referenced by service
+
+#### SSL Certificates
+-  Google-manged certificates
+   -  Completely managed by Google
+   -  Do not support wildcard domains
+-  Self-managed
+   -  Managed and shared with Google Cloud
+   -  Provision your own certificates
+   -  List the certificate in annotation for use
+-  Self-managed as Secrets
+   -  Provision your own certificates
+   -  Create a secret to hold the certificate
+   -  Refer to the secret for use
+
+### GKE Storage Options
+1.  Cloud SQL
+2.  Cloud Spanner
+3.  Datastore
+4.  Filestore
+5.  Cloud Storage
+6.  Persistent Disk
+
+
