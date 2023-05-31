@@ -113,3 +113,18 @@
 -  Once an onject is deleted, it cannot be undeleted
 -  Lifecycle rules can take up to 24 hours to take effect
 -  Test lifecycle rules in development first
+
+
+```bash
+# ssh into cloud shell
+gcloud compute ssh bowtie-instance --zone us-east1-b
+
+# Add sign url with service account key to a specific object in storage bucket
+gsutil signurl -d 10m your-private-key.json gs://your-bucket-name/your-object-name.jpg
+
+# Get versioning
+gsutil versioning get gs://your-bucket-name
+
+# Set on versioning
+gsutil versioning set on gs://your-bucket-name
+```
