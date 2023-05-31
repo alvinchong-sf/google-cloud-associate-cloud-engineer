@@ -108,6 +108,79 @@
 
 4.  AutoML
     -  Fully Managed Suite of machine learning products
-    
 
+
+## Operations Suite (Formerly Stackdriver)
+1.  Monitoring
+2.  Logging
+3.  Error Reporting
+4.  Debugger (APM)
+5.  Trace (APM)
+6.  Profiler (APM)
+
+eg. (dynatrace, New Relic, PagerDuty, AppDynamics, LightStep, BlueMedora, DataDog, (x)Matters, Grafana Labs, Splunk)
+
+-  A suite of tools for logging, monitoring and application diagnostics
+-  Available for GCP and AWS
+-  VM monitoring with agents
+
+### Cloud Monitoring
+-  Collects measurements, or metrics, to help you understand how your applications and system services are performing
+-  Collects metrics to provide insights
+-  Dashboards and Charts
+-  Workspaces are needed to use cloud monitoring
+-  Agents are recommended to monitor VMs
+-  Works together with cloud logging
+-  Support to monitor GKE
+-  Alerting
+
+### Cloud Logging
+-  Central repository for log data from multiple sources
+-  Real-time log management and analysis
+-  Tight integration with monitoring
+-  Platform, system and application logs
+-  Export logs to other sources
+-  Logs Viewer only shows logs from one project
+-  Log Entry records a status or an event
+-  Logs are a named collection of log entries within a GCP resource
+-  Retention period how logs are kept
+-  Audit logs who did what, where and when
+-  Access Transparency Logs actions taken by Google staff
+-  Agent Logs
+
+### Error Reporting
+-  Real time error monitoring and alerting
+-  Counts, analyzes and aggregates all the errors in your GCP environment
+-  Alerts you when a new application error occurs
+-  Integrated into Cloud Functions and GAE Standard
+-  Issue tracking integration
+-  In beta for GCE, GKE, GAE Flexible, AWS EC2
+-  Go, Java, Node.js, .NET, PHP, Python, Ruby
+
+### Debugger
+-  Inspect the state of a running application in real time, without stopping or slowing it down.
+-  Debug a running application with no latency
+-  "Snapshot" the call stack in your application
+-  Logpoints allow you to inject logging into running services
+-  Can be hooked into remote Git repo - Github, GitLab, Bitbucket
+-  Can be installed on non-GCP environments
+-  Go, Java, Node.js, .NET, PHP, Python, Ruby
+
+### Trace
+-  Collects latency data from App Engine, HTTPS load balancers and applications
+-  Helps to understand how long it takes your application to handle incoming requests (latency)
+-  Collects latency data from cloud resources and apps
+-  Integrated with GAE Standard
+-  Can be install on GCE, GKE, and GAE
+-  Can be installed on non-GCP environments
+-  Go, Java, Node.js, .NET, PHP, Python, Ruby
+
+### Profiler
+-  Continuosly gathers CPU usage and memory allocation information from your applcations
+-  Helps discover patterns of resource consumption
+-  Low-profile
+-  Needs profiling agent to be installed
+-  Can be install on GCE, GKE, and GAE
+-  Can be installed on non-GCP environments
+-  Go, Java, Node.js, .NET, PHP, Python, Ruby
 
