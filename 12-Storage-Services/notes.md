@@ -128,3 +128,111 @@ gsutil versioning get gs://your-bucket-name
 # Set on versioning
 gsutil versioning set on gs://your-bucket-name
 ```
+
+
+## Cloud SQL
+-  Fully managed, relational database service (RDBMS)
+-  DBaaS (Database as a Service)
+-  Low latency, transactional, relational db workloads
+-  MySQL, PostgreSQL, and SQL Server: New
+-  Replication: Read Replicas
+-  High Availability
+-  On-demand and automatic backups
+-  Point in time recovery
+-  30 TB storage capacity (HDD or SSD)
+-  Automatic storage increase
+-  Encryption at rest and in transit
+-  Billed for instance, persistent disk and egress traffic
+-  Connecting to Cloud SQL
+   -  Connecting to Cloud SQL with Public or Private IP
+   -  Cloud SQL Proxy
+   -  Authorize a network
+   -  External Applications
+
+### Backups
+-  Types of backups
+   -  On-demand
+      -  Create at any time
+      -  Persist until you delete them
+   -  Automated
+      -  4 hour backup window
+      -  Occur everyday
+      -  7 most recent backups are retained
+   -  Point in time recovery (PITR)
+      -  Recover an instance to a specific point in time
+      -  Always creates a new instance
+
+## Cloud Spanner
+-  Fully managed relational database service that is both strongly consistent and horizontally scalable
+-  DBaaS(Database as a Service)
+-  Supports schemas, ACID transactions, and SQL queries
+-  Globally distributed
+-  Handles replicas and sharding
+-  Automatic scaling and node redundancy
+-  Up to 99.999% availability
+-  Data layer encryption, audit logging, IAM integration
+-  Designed for financial services, ad tech, retail and global supply chain, gaming
+-  Pricing: $0.90/node/hr + $0.30/GB/mo.
+
+## NoSQl Databases
+1.  Cloud Bigtable
+    1.  Fully managed, wide-column NoSQL database designed for terabyte to petabyte-scale workloads that offers low latency and high throughput.
+    2.  Built for real time app serving & large-scale analytical workloads
+    3.  Regional Service
+    4.  Automated replication
+    5.  Store large amounts of single-keyed data
+    6.  Add nodes when oyu need them
+    7.  Cluster resizing
+    8.  Ideal data source for MapReduce operations
+    9.  High-priced
+    10.  Storage engine uses
+         1.  Batch MapReduce operations
+         2.  Stream processing/analytics
+         3.  Machine-learning applications
+    11.  Use Cases
+         1.  Time-series data
+         2.  Marketing data
+         3.  Financial data
+         4.  IoT data
+         5.  Graph data
+
+2.  Cloud Datastore
+    1.  Fully Managed, highly scalable NoSQL document database built for automatic scaling, high performance, and ease of application development
+    2.  High-availability of reads and writes
+    3.  Atomic transactions
+    4.  Automatic Scaling
+    5.  SQL -like query language (GQL)
+    6.  Strong and eventual consistency
+    7.  Encryption at Rest
+    8.  Being retired in favor of Cloud Firestore in 2021
+    9.  Datastore emulator
+        1.  Provides local emulation of the production Datastore environment
+        2.  Component of the Google Cloud SDK's gcloud tool
+    10.  Use cases
+         1.  Product Catalogs
+         2.  User profiles
+         3.  Transaction based on ACID properties
+
+3.  Firestore for firebase
+    1.  Flexible, scalable NoSQL cloud database to store and sync data for client and server-side development
+    2.  Collection stores Document and doc store Data
+    3.  Serverless
+    4.  Multi-region replication
+    5.  Expressive querying
+    6.  Realtime updates
+    7.  Offline support
+    8.  Secure
+    9.  Realtime Database
+    10.  Simpler version of Firestore
+    11.  Firebase: A mobile app development platform that provides tools and cloud services to help enable developers to develop apps faster and more easily
+
+4.  Memorystore
+    1.  Fully managed service for either Redis or Memcached in-memory data store to build application caches
+    2.  High Availability
+    3.  Scale as needed
+    4.  Secure
+    5.  Always up to date
+    6.  Use cases
+        1.  Caching
+        2.  Gaming (leaderboards, user profiles)
+        3.  Stream processing
