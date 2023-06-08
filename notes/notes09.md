@@ -79,8 +79,10 @@
 -  Control Plane responsible for schedling and management
 -  Nodes run containerized apps
 -  Nodes responsible for Docker runtime
--  Control Plane
-   -  API serverthe point of interaction with the cluster (API calls or kubectl)
+
+
+### Control Plane
+   -  API servers, the point of interaction with the cluster (API calls or kubectl)
    -  Kube Scheduler: Discovers and assigns newly created pods
    -  Kube controller manager: Runs all controller processes
    -  Cloud controller manager: Runs controller specific to the cloud provider
@@ -106,8 +108,10 @@
    -  Single-zone
       -  1 control plane
    -  Multi-Zonal
+      -  Single replica of the control plane, running in a single zone and has nodes running in multiple zones.
       -  1 control plane that controls nodes in other zone
 -  Regional
+   -  Multiple replicas of the control plane running in multiple zone.
    -  Each zone has its own control plane and nodes
 
 -  Private Cluster
@@ -115,10 +119,15 @@
    -  Disable to public internet
 
 ### Cluster Version
-1.  Release Channel
+1.  Release Channel (Auto upgrade enabled)
     -  Rapid
-    -  Regular
+       -  Several weeks after upstream open source GA
+    -  Regular (Default)
+       -  2 to 3 months after releasing in Rapid
     -  Stable
+       -  2 to 3 months after releasing in Regular
+    -  Speicifc Version
+       -  Use a specific supported version of Kubernetes for a given workload.
 
 ### Cluster upgrades
 -  Control plane and nodes do not always run the same version at all times
