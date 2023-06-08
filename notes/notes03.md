@@ -49,12 +49,15 @@ Multi-Regions are large geographic areas, that contains __*two-or more regions.*
 
 3.  Persistent Disks (blob storage)
     1.  Durable block storage for instances
-    2.  Standard or Solid State (SSD)(lower latency)
+    2.  Standard (HDD) or Solid State (SSD)(lower latency)
 
 ## Databases
 ### SQL
 1.  Cloud SQL (PostgreSQL, MySQL, SQL Server)
 2.  Cloud Spanner
+    1.  Scalable relational database service
+    2.  Support transactions, strong consistency and synchornous replication
+    3.  High availability across regions and globally
 
 ### No-Sql
 1.  Bigtable
@@ -94,6 +97,7 @@ Multi-Regions are large geographic areas, that contains __*two-or more regions.*
 
 ## Advanced Connectivity
 1.  Cloud VPN
+    1.  Connect your on-premise network to your VPC through IPsec connection
 2.  Direct Interconnect
 3.  Direct Peering
 4.  Carrier Peering

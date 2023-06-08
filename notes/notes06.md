@@ -96,6 +96,20 @@ IP Packet contains:
 -  Support only for IPv4 addresses
 -  Each VPC contains a default network with default subnet
 -  2 Network types: Auto Mode or Custom Mode
+-  default network cidr block `10.128.0.0/20`
+
+```
+# Default VPC
+## Subnet in each region Route to defailt internet gateway
+
+10.142.0.0/20 => us-east-1
+10.128.0.0/20 => us-central-1
+10.132.0.0/20 => europe-west-1
+10.140.0.0/20 => asian-west-1
+10.152.0.0/20 => australia-southeast-1
+10.158.0.0/20 => southamerica-east-1
+10.162.0.0/20 => northamerica-northeast-1
+```
 
 
 ## Subnets
@@ -131,7 +145,7 @@ Broadcast - Last address
         4.  Lowest priority
     2.  Subnet Route
         1.  Routes that define paths to each subnet in the VPC.
-        2.  Each subnet has aat least one subnet route whose destination matches the primary IP range of the subnet
+        2.  Each subnet has at least one subnet route whose destination matches the primary IP range of the subnet
         3.  When a subnet is created, a corresponding subnet route is created for both primary and secondary IP range
         4.  Cannot delete a subnet route unless you modify or delete the subnet
 2.  Custom Routes
