@@ -13,6 +13,11 @@
 -  Host is available in a Zone
 -  Multi-tenant host or Sole-tenant node
 
+### How To quickly launch multiple copies of your instance to handle this traffic
+1.  Create a snapshot of your instances bootdisk
+2.  Use the snapshot to create a custom image
+3.  Use the custom images to launch new instances.
+
 ## Machine Configuration
 1.  Cores(vCPU) and Memory
     1.  Many machine types - General, compute, memory

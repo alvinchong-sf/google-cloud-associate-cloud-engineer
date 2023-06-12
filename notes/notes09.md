@@ -126,7 +126,7 @@
        -  2 to 3 months after releasing in Rapid
     -  Stable
        -  2 to 3 months after releasing in Regular
-    -  Speicifc Version
+    -  Specific Version
        -  Use a specific supported version of Kubernetes for a given workload.
 
 ### Cluster upgrades
