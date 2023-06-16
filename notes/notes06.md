@@ -227,7 +227,7 @@ Global IP address
 
 ## Shared VPC
 
-## CPV Flow Logs
+## VPC Flow Logs
 -  1 every 10 packets are captured
 -  Cloud logging activates logs, can possibily push logs to Cloud Storage
 
