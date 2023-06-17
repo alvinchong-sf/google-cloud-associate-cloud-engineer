@@ -305,4 +305,10 @@
 5.  Cloud Storage
 6.  Persistent Disk
 
+```bash
+# In order for kubectl command line tool to work in cloud shell,
+# Please run 
+gcloud container clusters get-credentials <CLUSTER_NAME> --zone <ZONE>
+```
+
 
