@@ -132,6 +132,7 @@ Second-to-last address - Google Cloud future use
 Broadcast - Last address
 
 ## Routing and Private Google Access
+-  Private Google Access: When Vm's who only have internal IP addresses can communicate with Google Services external Ips through Private Google Access
 -  Routes define the network traffic path from one destination to the other
 -  In a VPC routes consists of a single destination (CIDR) and a single next hop
 -  All routes are stored in the routing table for the VPC of an applicable route based on a routing order
