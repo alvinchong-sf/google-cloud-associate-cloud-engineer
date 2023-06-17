@@ -313,4 +313,4 @@ alvin.com. <-- ROOT is the dot
 
 
 > **Note for exam**
-> When creating DNS, SOA and NS record will be automatically created
+> When creating DNS, __*SOA*__ and __*NS*__ record will be automatically created
