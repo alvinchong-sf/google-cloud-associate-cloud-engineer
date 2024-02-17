@@ -61,7 +61,13 @@
 -  Forwarding rules in place to distribute defined targets to target pools
 -  URL maps direct requests based on rules
 -  SSL certificates must be used for HTTPS (Google managed or self managed)
--  Ports 80, 8080, 443 (HTTPS)
+-  Ports 
+   -  80 (HTTP - Hyper Text Transfer Protocol)
+   -  443 (HTTPS - HTTP with TLS(Transport Layer Security) and SSL(Secure Sockets Layer))
+   -  22 (SSH - Secure Shell)
+   -  25 (SMTP - Simple Mail Transfer Protocol)
+   -  21 (FTP - File Transfer Protocol)
+   -  8080 (Use for development purposes, popular in Java)
 
 ### SSL Proxy
 -  Reverse proxy load balancer that distributes SSL traffic coming from the internet to VMs

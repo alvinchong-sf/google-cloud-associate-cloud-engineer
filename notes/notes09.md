@@ -111,6 +111,7 @@
       -  Single replica of the control plane, running in a single zone and has nodes running in multiple zones.
       -  1 control plane that controls nodes in other zone
 -  Regional
+   -  For high availability
    -  Multiple replicas of the control plane running in multiple zone.
    -  Each zone has its own control plane and nodes
 
